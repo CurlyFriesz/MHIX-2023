@@ -5,7 +5,7 @@ using UnityEngine;
 public class sword : MonoBehaviour
 {
     [SerializeField]
-    float damage = 5f;
+    int damage = 5;
 
     public Camera cam;
     public Rigidbody2D rb;
@@ -42,7 +42,7 @@ public class sword : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We hit" + enemy.name);
+            enemy.GetComponent<enemy>().TakeDamage(damage);
         }
     }
 
